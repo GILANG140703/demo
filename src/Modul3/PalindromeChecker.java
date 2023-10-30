@@ -1,12 +1,16 @@
 package Modul3;
+import java.util.Scanner;
 
+/**
+ * kelas palindomrecheckeryang enyediakan metode untuk memeriksa apakah sebuah string adalah palindorme atau bukan
+ */
 public class PalindromeChecker {
-
     /**
-     * @param input
-     * @return
+     * memeriksa apakah sebuah string adalah palindrome
+     * @param input string yang aakan di periksa
+     * @return true jika string adalah palindrome,false jika tidak
      */
-    // Method untuk memeriksa apakah sebuah string adalah palindrome
+
     public static boolean isPalindrome(String input) {
         // Menghapus spasi dan mengubah huruf kecil agar perbandingan tidak case-sensitive
         String cleanedInput = input.replaceAll("\\s+", "").toLowerCase();
@@ -16,30 +20,16 @@ public class PalindromeChecker {
         return cleanedInput.equals(reversed);
     }
 
-    /**
-     * @param args
-     */
+
     public static void main(String[] args) {
-        String word = "level";
-        /**
-         *
-         */
-        if (isPalindrome(word)) {
-            System.out.println(word + " adalah palindrome.");
-        } else {
-            System.out.println(word + " bukan palindrome.");
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Masukkan kata atau kalimat untuk memeriksa apakah itu palindrome: ");
+        String userInput = scanner.nextLine();
 
-
-        /**
-         *
-         */
-        String phrase = "A man a plan a canal Panama";
-        if (isPalindrome(phrase)) {
-            System.out.println(phrase + " adalah palindrome.");
+        if (isPalindrome(userInput)) {
+            System.out.println(userInput + " adalah palindrome.");
         } else {
-            System.out.println(phrase + " bukan palindrome.");
+            System.out.println(userInput + " bukan palindrome.");
         }
     }
 }
-
